@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       notNull: true
     },
+    post_id: {
+      type: DataTypes.INTEGER,
+      notNull: true
+    }
     text: {
       type: DataTypes.STRING,
       notNull: true
