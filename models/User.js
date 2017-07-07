@@ -9,17 +9,24 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('user', {
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      notNull: true,
       unique: true
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false
+      notNull: true,
+      min: 6
     },
     username: {
       type: DataTypes.STRING,
-      allowNull: false,
+      is: /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/,
+      notNull: true,
       unique: true
+    },
+    profileImageUrl: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      isUrl: true
     }
   }, {
     paranoid: false,
