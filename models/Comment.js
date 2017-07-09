@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     post_id: {
       type: DataTypes.INTEGER,
       notNull: true
-    }
+    },
     text: {
       type: DataTypes.STRING,
       notNull: true
